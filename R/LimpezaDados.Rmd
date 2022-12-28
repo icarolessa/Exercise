@@ -1,0 +1,22 @@
+```{r}
+#importando dados
+dados = read.csv("Churn.csv", sep = ";", na.strings = "", stringsAsFactors = T)
+head(dados)
+summary(dados)
+```
+Colunas
+```{r}
+colnames(dados) = c("Id", "Score", "Estado", "Genero", "Idade", "Patrimonio", "Saldo", "Produtos", "TemCartCredito", "Ativo", "Salario", "Saiu")
+head(dados)
+```
+Explorando Dados
+#Estados
+```{r}
+counts = table(dados$Estado)
+barplot(counts, main="Estados", xlab="Estados")
+```
+#Generos
+```{r}
+counts = table(dados$Genero)
+barplot(counts, main="Gêneros", xlab="Gêneros")
+```
